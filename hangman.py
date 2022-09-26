@@ -6,14 +6,21 @@ def read_file(file_name):
     """
     TODO: Step 1 - open file and read lines as words
     """
-    return []
+    with open(file_name,'r') as f:
+        listofwords= f.readlines()
+    return listofwords
+
 
 
 def select_random_word(words):
     """
     TODO: Step 2 - select random word from list of file
     """
-    return words[0]
+    one_word = words[random.randint(0,len(words))]
+    print ('Guess the word: _'+one_word[1:])
+    return one_word
+
+
 
 
 
@@ -21,7 +28,8 @@ def get_user_input():
     """
     TODO: Step 3 - get user input for answer
     """
-    return 'TODO'
+    intake=input("Guess the missing letter: ")
+    return intake
 
 
 def run_game(file_name):
